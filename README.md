@@ -13,6 +13,7 @@ For example, the distance between two cells labeled 19 and 30 is 5. One of the s
 ## Solution ##
 
 The high level description of the algorithm:
+
 1.  Compute coordinates of a cell labeled by a number in the hexagonal coordinate system
 2.  Compute the distance between two cells in the hexagonal coordinate system
 

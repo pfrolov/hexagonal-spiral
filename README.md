@@ -4,11 +4,11 @@
 
 #### Calculate the distance ####
 
-   python src/distance.py 19 30
+    python src/distance.py 19 30
 
 #### Running the tests ####
 
-   nosetests
+    nosetests
 
 ## Overview ##
 

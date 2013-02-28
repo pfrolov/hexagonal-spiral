@@ -1,5 +1,6 @@
 import operator
 import argparse
+import sys
 from math import sqrt
 from math import ceil
 
@@ -13,6 +14,11 @@ def main():
 
     number1 = args.numbers[0]
     number2 = args.numbers[1]
+
+    if (number1 < 1 or number2 < 1):
+        print "Both numbers should be positive integers greater than zero {0}, {1}".format(number1, number2)
+        sys.exit(1)
+
     dist = distance(number1, number2)
 
     print "The distance between {0} and {1} is {2}".format(number1, number2, dist)

@@ -2,7 +2,7 @@
 
 ## How to use ##
 
-#### Calculate the distance ####
+#### Calculating the distance ####
 
     python src/distance.py 19 30
 

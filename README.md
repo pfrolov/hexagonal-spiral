@@ -26,10 +26,11 @@ The hexagonal coordinate system is defined as shown on the image.
 
 ### The distance metric ###
 
-The distance between two cell A and B is by:
+The distance between two cell A and B is defined by:
 
     dx = B.x - A.x;
     dy = B.y - A.y;
+    
     if (sign(dx) == sign(dy)) {
         dist = max(abs(dx), abs(dy));
     } else {

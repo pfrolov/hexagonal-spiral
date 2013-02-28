@@ -36,3 +36,50 @@ The distance between two cell A and B is defined by:
     } else {
         dist = abs(dx) + abs(dy);
     }
+
+### Computing coordinates of a cell ###
+
+The sequence described by the algorithm above is the sequence [A003215](http://oeis.org/A003215 "A003215") of Hex (or centered hexagonal) numbers: 3 * n * (n + 1) + 1 (crystal ball sequence for hexagonal lattice).
+
+Solving the equation 3 * n * (n + 1) + (1 - cell_label) = 0 gives the distance of the cell from the cell labeled by 1 or the center.
+
+To get a position of the cell on its level of the spiral, we subtract the maximum number of a cell on the previous level from the cell label: 
+
+    cell_level_position = cell_label - (3 * (cell_distance - 1) * (cell_distance - 1) + 3 * (cell_distance - 1)  + 1)
+
+It can be used to calculate the cell "diagonal":
+
+    diagonal = ceiling(cell_level_position / cell_distance)
+
+We map six "diagonals" to coordinates (diagonal_coordinates):
+
+    1. (-1, -1)
+    2. (-1, 0)
+    3. (0, 1)
+    4. (1, 1)
+    5. (1, 0)
+    6. (0, -1)
+
+and to coordinate shifts (diagonal_shift_coordinates):
+
+    1. (1, 0)
+    2. (0, -1)
+    3. (-1, -1)
+    4. (-1, 0)
+    5. (0, 1)
+    6. (1, 1)
+
+The shift of the cell relative to its "diagonal" is defined as:
+    
+    diagonal_shift = diagonal * cell_distance - cell_level_position
+
+To calculate cell coordinates:
+
+    cell_coordinates = diagonal_coordinates * cell_distance + diagonal_shift_coordinates * diagonal_shift
+
+    
+
+
+
+
+

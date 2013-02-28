@@ -18,10 +18,20 @@ The high level description of the algorithm:
 2.  Compute the distance between two cells in the hexagonal coordinate system
 
 
-## Hexagonal coordinate system ##
+### Hexagonal coordinate system ###
 
 The hexagonal coordinate system is defined as shown on the image.
 
 ![Hexagonal grid with coordinate example](/images/grid_coordinates.png)
 
+### The distance metric ###
 
+The distance between two cell A and B is by:
+
+    dx = B.x - A.x;
+    dy = B.y - A.y;
+    if (sign(dx) == sign(dy)) {
+        dist = max(abs(dx), abs(dy));
+    } else {
+        dist = abs(dx) + abs(dy);
+    }

@@ -1,5 +1,15 @@
 # Hexagonal Sprial #
 
+## How to use ##
+
+#### Calculate the distance ####
+
+   python src/distance.py 19 30
+
+#### Running the tests ####
+
+   nosetests
+
 ## Overview ##
 
 Computes the distance between two cells on the hexagonal grid labeled by centered hexagonal numbers. 
